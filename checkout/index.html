@@ -153,13 +153,22 @@
       return;
     }
 
+    // Paddle fires checkout.closed when the buyer dismisses the overlay — including
+    // the success screen shown AFTER checkout.completed. Latch completion so that
+    // close doesn't overwrite "Payment complete" with "No payment was taken".
+    let completed = false;
+
     try {
       Paddle.Environment.set(params.environment);
       Paddle.Initialize({
         token: params.paddle_client_token,
         eventCallback: function (event) {
-          if (event.name === 'checkout.completed') show('state-done');
-          else if (event.name === 'checkout.closed') show('state-closed');
+          if (event.name === 'checkout.completed') {
+            completed = true;
+            show('state-done');
+          } else if (event.name === 'checkout.closed' && !completed) {
+            show('state-closed');
+          }
         }
       });
       Paddle.Checkout.open({
