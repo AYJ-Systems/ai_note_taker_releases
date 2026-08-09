@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1GL2BJGCY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y1GL2BJGCY');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <title>Frequently Asked Questions — Ayjan Minutes</title>
+  <meta name="description" content="Common questions about Ayjan Minutes — recording, privacy, plans and troubleshooting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: oklch(11% 0.015 210); --bg-2: oklch(15% 0.018 210); --line: oklch(28% 0.018 210);
+      --text: oklch(92% 0.006 210); --read: oklch(80% 0.008 210); --muted: oklch(56% 0.014 210);
+      --accent: oklch(72% 0.18 200); --accent-dim: oklch(72% 0.18 200 / 0.12);
+      --serif: 'Fraunces', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--read); font-family: var(--sans); font-weight: 300; line-height: 1.75; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.4; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem clamp(1.5rem, 6vw, 5rem); border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
+    nav.scrolled { background: oklch(11% 0.012 55 / 0.9); backdrop-filter: blur(12px); border-color: var(--line); }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--text); }
+    .nav-logo:hover { text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .section-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem; }
+    .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--accent); }
+    .doc-hero { padding: 9rem clamp(1.5rem, 6vw, 5rem) 2.5rem; max-width: 880px; margin: 0 auto; position: relative; }
+    .doc-hero::after { content: ''; position: absolute; top: 30%; right: -20%; width: 45vw; height: 45vw; background: radial-gradient(circle, oklch(72% 0.18 200 / 0.06) 0%, transparent 70%); pointer-events: none; }
+    .doc-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.02em; }
+    .doc-hero h1 em { font-style: italic; color: var(--accent); }
+    .doc-hero .lede { margin-top: 1.25rem; max-width: 46ch; }
+    .doc { max-width: 760px; margin: 0 auto; padding: 1rem clamp(1.5rem, 6vw, 5rem) 6rem; }
+    .doc h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(1.4rem, 3vw, 1.9rem); letter-spacing: -0.01em; margin: 3.25rem 0 0.75rem; line-height: 1.2; }
+    .doc h2 .s { font-family: var(--serif); font-style: italic; color: var(--accent); font-size: 0.82em; margin-right: 0.6rem; }
+    .doc p { margin: 1rem 0; }
+    .doc strong { color: var(--text); font-weight: 500; }
+    details { border-bottom: 1px solid var(--line); }
+    details summary { list-style: none; cursor: pointer; padding: 1.1rem 2.5rem 1.1rem 0; position: relative; color: var(--text); font-weight: 400; line-height: 1.5; transition: color 0.2s; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary:hover { color: var(--accent); }
+    details summary::after { content: ''; position: absolute; right: 0.4rem; top: 1.65rem; width: 9px; height: 9px; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); transform: rotate(45deg); transition: transform 0.25s, border-color 0.2s; }
+    details[open] summary::after { transform: rotate(-135deg); border-color: var(--accent); }
+    details summary:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+    details .a { padding: 0 2.5rem 1.4rem 0; }
+    details .a p { margin: 0 0 0.9rem; }
+    details .a p:last-child { margin-bottom: 0; }
+    .closing { margin-top: 3.5rem; padding: 1.75rem; border: 1px solid var(--line); background: var(--bg-2); }
+    .closing p { margin: 0; }
+    footer { border-top: 1px solid var(--line); padding: 2rem clamp(1.5rem, 6vw, 5rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: var(--serif); font-size: 0.95rem; color: var(--muted); }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-social { display: flex; gap: 1rem; align-items: center; }
+    .footer-social a { color: var(--muted); }
+    .footer-social a:hover { color: var(--text); }
+    .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+    @media (max-width: 720px) { .nav-links a { display: none; } }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Ayjan <span>Minutes</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#download">Download</a></li>
+    </ul>
+  </nav>
+
+  <header class="doc-hero">
+    <p class="section-label">Help</p>
+    <h1>Frequently Asked <em>Questions</em></h1>
+    <p class="lede">Everything people usually ask before they start — and the handful of things that come up afterwards.</p>
+  </header>
+
+  <main class="doc">
+
+    <h2><span class="s">01</span>Getting started</h2>
+
+    <details>
+      <summary>Do I need an account to try it?</summary>
+      <div class="a"><p>No. Choose <strong>Try free — no account</strong> when you open the app and you get 5 free recordings straight away. No email, no password, no card. If you create an account later it starts fresh with its own free allowance.</p></div>
+    </details>
+
+    <details>
+      <summary>What do I need to run it?</summary>
+      <div class="a"><p>A Windows 10 or 11 laptop or desktop. That's it — nothing else to install first. It's Windows-only for now, because recording the audio from your calls works differently on Mac.</p></div>
+    </details>
+
+    <details>
+      <summary>Is it hard to install?</summary>
+      <div class="a"><p>No. Download the installer from our website and run it — you're done in a couple of minutes. Tick the box to download the transcription files during setup and the app is ready before your first meeting.</p></div>
+    </details>
+
+    <details>
+      <summary>How do I get new versions?</summary>
+      <div class="a"><p>The app tells you. When an update is available a button appears at the top — one click and it updates itself.</p></div>
+    </details>
+
+    <h2><span class="s">02</span>Recording</h2>
+
+    <details>
+      <summary>Does it pick up everyone on the call, or just me?</summary>
+      <div class="a"><p>Everyone. It records your microphone and the sound coming out of your laptop at the same time, so Teams, Zoom, Meet or any other call is captured. Just choose your microphone and your speakers in the dropdowns before you hit record.</p></div>
+    </details>
+
+    <details>
+      <summary>Do I have to invite a bot or connect my calendar?</summary>
+      <div class="a"><p>No. There's nothing to set up and nothing joins your meeting. The app simply records what's happening on your computer, so nobody sees a note-taker in the participant list.</p></div>
+    </details>
+
+    <details>
+      <summary>Can I record a meeting in a room, not a video call?</summary>
+      <div class="a"><p>Yes, as long as your laptop is on the table — it records through the microphone like any other audio. You'll get better results from a call, where each person's voice comes through cleanly, than from several people sitting around one laptop.</p></div>
+    </details>
+
+    <details>
+      <summary>Does it work without internet?</summary>
+      <div class="a"><p>Recording and transcribing do — those happen on your own laptop. You need a connection to sign in and to generate the written minutes. If you lose Wi-Fi mid-meeting, keep recording; you can produce the minutes once you're back online.</p></div>
+    </details>
+
+    <details>
+      <summary>Is there a limit on how long a meeting can be?</summary>
+      <div class="a"><p>It'll record up to 4 hours. If everything goes quiet for 15 minutes it stops on its own, so you don't come back to an hour of silence. Nothing is lost either way — the transcript is saved as it goes.</p></div>
+    </details>
+
+    <details>
+      <summary>What languages does it handle?</summary>
+      <div class="a"><p>English only at the moment. Other languages are recognised and skipped rather than transcribed badly.</p></div>
+    </details>
+
+    <h2><span class="s">03</span>Accuracy and speed</h2>
+
+    <details>
+      <summary>How accurate is the transcript?</summary>
+      <div class="a"><p>It comes down to the audio. Because it records the call directly from your laptop, the other people come through as clearly as you hear them — that's usually very good. Your own voice depends on your microphone: a headset is best, and your laptop's built-in mic is fine in a quiet room. Background noise or several people talking over each other in the same room will be rougher.</p></div>
+    </details>
+
+    <details>
+      <summary>Can I make it more accurate?</summary>
+      <div class="a"><p>Yes — in Settings you can pick a larger transcription option. It's more accurate but takes longer to process. The default suits most meetings.</p></div>
+    </details>
+
+    <details>
+      <summary>Why is my first transcription so slow?</summary>
+      <div class="a"><p>The first run downloads the transcription files it needs. That's a one-off — every meeting after it is much faster.</p></div>
+    </details>
+
+    <details>
+      <summary>Can I make it faster?</summary>
+      <div class="a"><p>If your laptop has a dedicated NVIDIA graphics card it can run several times quicker, with a bit of one-time setup — get in touch and we'll walk you through it. Otherwise a smaller transcription option in Settings trades a little accuracy for speed.</p></div>
+    </details>
+
+    <details>
+      <summary>It keeps misspelling people's names.</summary>
+      <div class="a"><p>Add the people you meet with to the <strong>Names</strong> tab and it will spell them correctly from then on. Listing someone who wasn't at the meeting does no harm — only names that actually come up are used.</p></div>
+    </details>
+
+    <h2><span class="s">04</span>Your notes</h2>
+
+    <details>
+      <summary>What do I actually get at the end?</summary>
+      <div class="a"><p>A tidy Word document: who was there, what was discussed, what was decided, and a list of action items colour-coded by who owns them. There's a plain-text copy too, handy for pasting into an email.</p></div>
+    </details>
+
+    <details>
+      <summary>Where do my files go?</summary>
+      <div class="a"><p>Into a folder called <strong>Ayjan Minutes</strong> in your Documents. There's a button in the app that opens it. Your recordings, transcripts and minutes are all there.</p></div>
+    </details>
+
+    <details>
+      <summary>Can I edit the minutes?</summary>
+      <div class="a"><p>Yes — it's an ordinary Word document. Change anything you like before sending it on.</p></div>
+    </details>
+
+    <details>
+      <summary>My older recordings have disappeared.</summary>
+      <div class="a"><p>That's the automatic clean-up — the app keeps only your most recent few. Raise the number under <strong>Settings</strong> if you want more. Your minutes are unaffected.</p></div>
+    </details>
+
+    <h2><span class="s">05</span>Privacy</h2>
+
+    <details>
+      <summary>Does my meeting audio get uploaded anywhere?</summary>
+      <div class="a"><p>No. The recording and the transcription both happen on your own computer. The audio never leaves your machine.</p></div>
+    </details>
+
+    <details>
+      <summary>So what does leave my laptop?</summary>
+      <div class="a"><p>Only the finished text transcript, and only when you ask for minutes to be written. Nothing is sent while you're recording.</p></div>
+    </details>
+
+    <details>
+      <summary>Who can see my transcripts?</summary>
+      <div class="a"><p>Just the AI service you've chosen, for the moment it takes to write your minutes. We don't keep a copy of your meetings, and there's no library of your recordings sitting on our servers.</p></div>
+    </details>
+
+    <details>
+      <summary>How do I delete my data?</summary>
+      <div class="a">
+        <p>Everything is an ordinary file in your Documents folder — delete it like anything else. Nothing is stored on a server.</p>
+        <p>The app also clears out old recordings for you: under <strong>Settings</strong> you choose how many to keep (five by default, up to 10), and older ones go automatically. Your finished minutes are never deleted.</p>
+      </div>
+    </details>
+
+    <h2><span class="s">06</span>Plans and payment</h2>
+
+    <details>
+      <summary>What do I get for free?</summary>
+      <div class="a"><p>5 recordings, 5 transcripts and 5 sets of AI minutes each month, at no cost and with no card.</p></div>
+    </details>
+
+    <details>
+      <summary>What does Pro cost?</summary>
+      <div class="a"><p>A$4.99 a month, or A$42.99 a year — about A$3.58 a month, saving 30%. Pro removes the monthly limits entirely and comes with priority support. <a href="index.html#pricing">See pricing</a>.</p></div>
+    </details>
+
+    <details>
+      <summary>How do I upgrade?</summary>
+      <div class="a"><p>Inside the app, under <strong>Settings → Account</strong>. Your plan is tied to your account, so it works on any laptop you sign in on.</p></div>
+    </details>
+
+    <details>
+      <summary>I've paid but the app still says Free.</summary>
+      <div class="a"><p>Click <strong>I've paid — refresh</strong> in the window that's waiting for your payment. If that doesn't do it, restart the app. Still stuck after a few minutes? <a href="mailto:ayjan.systems@gmail.com">Email us</a> and we'll sort it out.</p></div>
+    </details>
+
+    <details>
+      <summary>How do I cancel?</summary>
+      <div class="a"><p>Use the link in your receipt email. You keep Pro until the end of the period you've paid for, and you won't be charged again.</p></div>
+    </details>
+
+    <details>
+      <summary>Can I get a refund?</summary>
+      <div class="a"><p>Yes — within 14 days of your first payment. Email <a href="mailto:ayjan.systems@gmail.com">ayjan.systems@gmail.com</a> from the address on your account. If you're in Australia, your consumer rights apply as normal. <a href="refunds.html">Full refund policy</a>.</p></div>
+    </details>
+
+    <details>
+      <summary>Is my card safe?</summary>
+      <div class="a"><p>Your card details never reach us. Payments are handled by Paddle, a payment provider used by thousands of software companies.</p></div>
+    </details>
+
+    <h2><span class="s">07</span>Something's not working</h2>
+
+    <details>
+      <summary>Nothing was recorded, or I can't hear the other people.</summary>
+      <div class="a"><p>Check the microphone and speaker dropdowns are set to the devices you're actually using, and that both work in your Windows sound settings. If it's only <strong>your</strong> voice missing, update to the latest version — a recent Windows update caused that and it's already fixed.</p></div>
+    </details>
+
+    <details>
+      <summary>No minutes were generated.</summary>
+      <div class="a"><p>Make sure summarisation is turned on in Settings and that you're signed in. If you're on the free plan you may have used this month's allowance — the app will tell you if so.</p></div>
+    </details>
+
+    <details>
+      <summary>I can't sign in.</summary>
+      <div class="a"><p>Signing in needs an internet connection. Use <strong>Forgot password?</strong> to reset it. Without a connection the app still opens, and you can record and transcribe as normal.</p></div>
+    </details>
+
+    <div class="closing">
+      <p>Still stuck? Email <a href="mailto:ayjan.systems@gmail.com">ayjan.systems@gmail.com</a> and a real person will get back to you.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-logo">Ayjan <span>Minutes</span></span>
+    <span class="footer-copy">© 2026 Ayjan Minutes. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="about.html" aria-label="About">About</a>
+      <a href="faq.html" aria-label="Frequently Asked Questions">FAQ</a>
+      <a href="privacy.html" aria-label="Privacy Policy">Privacy</a>
+      <a href="terms.html" aria-label="Terms of Service">Terms</a>
+      <a href="refunds.html" aria-label="Refund Policy">Refunds</a>
+      <a href="mailto:ayjan.systems@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      <a href="https://www.linkedin.com/company/ayjanminutes" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://github.com/AYJ-Systems/ayjanminutes" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  </script>
+</body>
+</html>
